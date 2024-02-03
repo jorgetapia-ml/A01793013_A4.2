@@ -162,6 +162,18 @@ def mode(array):
         return modes[0]
 
 
+def output_file(statistics):
+    """Create output text file
+
+    Parameters
+    ----------
+    statistics : dictionary
+        dictionary with statistics values of the file 
+    """
+
+    with open("StatisticsResults.txt","w") as f:
+        f.write(str(statistics))
+
 def main():
     start_time = time.time()
 
@@ -181,7 +193,8 @@ def main():
     if array_numeric:
         for func in [mean, median, mode, std, var]:
             statistics[func.__name__] = func(array_numeric)
-
+    
+    output_file(statistics)
     end_time = time.time()
     execute_time = end_time - start_time
 
