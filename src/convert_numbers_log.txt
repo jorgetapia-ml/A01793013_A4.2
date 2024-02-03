@@ -1,0 +1,63 @@
+Testing with file: ../data/P2/TC1.txt
+Filename:  ../data/P2/TC1.txt
+Execute time: 0.006290912628173828 seconds
+Results:     Number                Path              binary_array hex_array
+0  6980368  ../data/P2/TC1.txt   11010101000001100010000  006A8310
+1  5517055  ../data/P2/TC1.txt   10101000010111011111111  00542EFF
+2  1336159  ../data/P2/TC1.txt     101000110001101011111  0014635F
+3  6750185  ../data/P2/TC1.txt   11001101111111111101001  0066FFE9
+4  1771937  ../data/P2/TC1.txt     110110000100110100001  001B09A1
+5   360952  ../data/P2/TC1.txt       1011000000111111000  000581F8
+6  5672561  ../data/P2/TC1.txt   10101101000111001110001  00568E71
+7   916583  ../data/P2/TC1.txt      11011111110001100111  000DFC67
+8  2700138  ../data/P2/TC1.txt    1010010011001101101010  0029336A
+9  9645053  ../data/P2/TC1.txt  100100110010101111111101  00932BFD
+-----------------------------------
+Testing with file: ../data/P2/TC2.txt
+Filename:  ../data/P2/TC2.txt
+Execute time: 0.0061452388763427734 seconds
+Results:     Number                Path              binary_array hex_array
+0  7116776  ../data/P2/TC2.txt   11011001001011111101000  006C97E8
+1  1666340  ../data/P2/TC2.txt     110010110110100100100  00196D24
+2  8886983  ../data/P2/TC2.txt  100001111001101011000111  00879AC7
+3   839365  ../data/P2/TC2.txt      11001100111011000101  000CCEC5
+4   924280  ../data/P2/TC2.txt      11100001101001111000  000E1A78
+5  1026310  ../data/P2/TC2.txt      11111010100100000110  000FA906
+6  1615293  ../data/P2/TC2.txt     110001010010110111101  0018A5BD
+7  1063875  ../data/P2/TC2.txt     100000011101111000011  00103BC3
+8   679035  ../data/P2/TC2.txt      10100101110001111011  000A5C7B
+9  5201970  ../data/P2/TC2.txt   10011110110000000110010  004F6032
+-----------------------------------
+Testing with file: ../data/P2/TC3.txt
+Filename:  ../data/P2/TC3.txt
+Execute time: 0.006081819534301758 seconds
+Results:    Number                Path binary_array hex_array
+0     -39  ../data/P2/TC3.txt     11011001  FFFFFFD9
+1     -36  ../data/P2/TC3.txt     11011100  FFFFFFDC
+2       8  ../data/P2/TC3.txt     00001000  00000008
+3      34  ../data/P2/TC3.txt     00100010  00000022
+4      17  ../data/P2/TC3.txt     00010001  00000011
+5      49  ../data/P2/TC3.txt     00110001  00000031
+6       5  ../data/P2/TC3.txt     00000101  00000005
+7      39  ../data/P2/TC3.txt     00100111  00000027
+8       0  ../data/P2/TC3.txt     00000000  00000000
+9      33  ../data/P2/TC3.txt     00100001  00000021
+-----------------------------------
+Testing with file: ../data/P2/TC4.txt
+Value non numeric found ABC replace by None
+Value non numeric found ERR replace by None
+Value non numeric found VAL replace by None
+Filename:  ../data/P2/TC4.txt
+Execute time: 0.0034530162811279297 seconds
+Results:    Number                Path binary_array hex_array
+0   -39.0  ../data/P2/TC4.txt     11011001  FFFFFFD9
+1   -36.0  ../data/P2/TC4.txt     11011100  FFFFFFDC
+2     8.0  ../data/P2/TC4.txt     00001000  00000008
+3    34.0  ../data/P2/TC4.txt     00100010  00000022
+4    17.0  ../data/P2/TC4.txt     00010001  00000011
+5    49.0  ../data/P2/TC4.txt     00110001  00000031
+6     5.0  ../data/P2/TC4.txt     00000101  00000005
+7     NaN  ../data/P2/TC4.txt         None      None
+8     0.0  ../data/P2/TC4.txt     00000000  00000000
+9    33.0  ../data/P2/TC4.txt     00100001  00000021
+-----------------------------------
