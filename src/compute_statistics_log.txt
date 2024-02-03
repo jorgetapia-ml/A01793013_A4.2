@@ -1,17 +1,17 @@
 Testing with file: ../data/P1/TC1.txt
-Execute time: 0.0032303333282470703 seconds
-Results: {'path': '../data/P1/TC1.txt', 'mean': 242.32, 'median': 239.5, 'mode': 393.0, 'std': 145.44002062361477, 'var': 21152.79959899749}
+Execute time: 0.0027844905853271484 seconds
+Results: {'path': '../data/P1/TC1.txt', 'mean': 242.32, 'median': 239.5, 'mode': [393.0, 170.0], 'std': 145.44002062361477, 'var': 21152.79959899749}
 -----------------------------------
 Testing with file: ../data/P1/TC2.txt
-Execute time: 0.006517171859741211 seconds
+Execute time: 0.003540515899658203 seconds
 Results: {'path': '../data/P1/TC2.txt', 'mean': 250.7840161861406, 'median': 247.0, 'mode': 230.0, 'std': 144.2077946713822, 'var': 20795.88804398353}
 -----------------------------------
 Testing with file: ../data/P1/TC3.txt
-Execute time: 0.009319305419921875 seconds
+Execute time: 0.008630037307739258 seconds
 Results: {'path': '../data/P1/TC3.txt', 'mean': 249.77621989860583, 'median': 249.0, 'mode': 94.0, 'std': 145.32360576940644, 'var': 21118.950393821862}
 -----------------------------------
 Testing with file: ../data/P1/TC4.txt
-Execute time: 0.009212017059326172 seconds
+Execute time: 0.00880575180053711 seconds
 Results: {'path': '../data/P1/TC4.txt', 'mean': 149.00267347908746, 'median': 147.75, 'mode': 123.75, 'std': 130.4195852566302, 'var': 17009.26821851143}
 -----------------------------------
 Testing with file: ../data/P1/TC5.txt
@@ -19,16 +19,22 @@ Value non numeric found ABA is ignored
 Value non numeric found 23,45 is ignored
 Value non numeric found 11;54 is ignored
 Value non numeric found ll is ignored
-Execute time: 0.0032265186309814453 seconds
-Results: {'path': '../data/P1/TC5.txt', 'mean': 241.49511400651465, 'median': 241.0, 'mode': 393.0, 'std': 145.70234164786083, 'var': 21229.17236166996}
+Execute time: 0.0029265880584716797 seconds
+Results: {'path': '../data/P1/TC5.txt', 'mean': 241.49511400651465, 'median': 241.0, 'mode': [393.0, 19.0], 'std': 145.70234164786083, 'var': 21229.17236166996}
 -----------------------------------
 Testing with file: ../data/P1/TC6.txt
-Execute time: 0.004694700241088867 seconds
-Results: {'path': '../data/P1/TC6.txt', 'mean': 1.8790659927977473e+20, 'median': 1.88008049965543e+20, 'mode': 1.27620004531949e+20, 'std': 1.0739995165766761e+20, 'var': 1.1534749616069338e+40}
+Execute time: 0.004344463348388672 seconds
+Results: {'path': '../data/P1/TC6.txt', 'mean': 1.8790659927977473e+20, 'median': 1.88008049965543e+20, 'mode': [1.27620004531949e+20, 2.05822098385834e+20], 'std': 1.0739995165766761e+20, 'var': 1.1534749616069338e+40}
 -----------------------------------
 Testing with file: ../data/P1/TC7.txt
 Value non numeric found ABBA is ignored
 Value non numeric found ERROR is ignored
-Execute time: 0.010464668273925781 seconds
-Results: {'path': '../data/P1/TC7.txt', 'mean': 2.474673954997149e+20, 'median': 2.4664097307429e+20, 'mode': 1.57638329490099e+20, 'std': 1.4461131060123312e+20, 'var': 2.091243115380632e+40}
+Execute time: 0.009900331497192383 seconds
+Results: {'path': '../data/P1/TC7.txt', 'mean': 2.474673954997149e+20, 'median': 2.4664097307429e+20, 'mode': [1.57638329490099e+20, 3.56818591009357e+20], 'std': 1.4461131060123312e+20, 'var': 2.091243115380632e+40}
 -----------------------------------
+-----------------------------------
+----------------PyLint-------------------
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+

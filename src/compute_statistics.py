@@ -1,3 +1,5 @@
+"""Module providing statistics using a file"""
+
 import argparse
 import time
 
@@ -15,16 +17,13 @@ def open_file(file_name):
         array with values in the file
     """
     try:
-        with open(file_name, "r") as f:
+        with open(file_name, "r", encoding="utf8") as f:
             text = f.read()
     except FileNotFoundError:
         print(f"Error: The file {file_name} was not found.")
         return []
     except PermissionError:
         print(f"Error: Permission denied when trying to read {file_name}.")
-        return []
-    except Exception as e:  
-        print(f"An unexpected error occurred: {e}")
         return []
     array = text.split()
     return array
@@ -107,7 +106,6 @@ def var(array):
     deviation_sum = 0
     for value in array:
         deviation_sum += (value - mean_value) ** 2
-    
     var_value = deviation_sum / (n_array - 1)
     return var_value
 
@@ -139,13 +137,11 @@ def median(array):
     """
     sort_array = sorted(array)
     n_array = len(sort_array)
-    
     if n_array % 2 == 1:
         return sort_array[n_array // 2]
-    else:
-        median_below = sort_array[n_array // 2 - 1]
-        median_upper = sort_array[n_array // 2]
-        return (median_below + median_upper) / 2
+    median_below = sort_array[n_array // 2 - 1]
+    median_upper = sort_array[n_array // 2]
+    return (median_below + median_upper) / 2
 
 def mode(array):
     """
@@ -158,20 +154,16 @@ def mode(array):
         The mode of the list. Returns a list of modes if multiple modes are found.
     """
     frequencies = {}
-    
     for value in array:
         if value in frequencies:
             frequencies[value] += 1
         else:
             frequencies[value] = 1
-    
     max_freq = max(frequencies.values())
     modes = [value for value, frecuencia in frequencies.items() if frecuencia == max_freq]
-    
     if len(modes) == 1:
         return modes[0]
-    else:
-        return modes[0]
+    return modes[:2]
 
 
 def output_file(statistics):
@@ -183,13 +175,15 @@ def output_file(statistics):
         dictionary with statistics values of the file 
     """
 
-    with open("StatisticsResults.txt","w") as f:
+    with open("StatisticsResults.txt","w",encoding="utf8") as f:
         f.write(str(statistics))
 
 def main():
+    """Run compute statistics with the file given
+    """
     start_time = time.time()
-
-    parser = argparse.ArgumentParser(description='Compute statistics from a file containing numbers.')
+    parser = argparse.ArgumentParser(
+        description='Compute statistics from a file containing numbers.')
     parser.add_argument('-f', '--file', type=str, required=True, help="File that contains numbers")
     args = parser.parse_args()
 
@@ -205,7 +199,6 @@ def main():
     if array_numeric:
         for func in [mean, median, mode, std, var]:
             statistics[func.__name__] = func(array_numeric)
-    
     output_file(statistics)
     end_time = time.time()
     execute_time = end_time - start_time

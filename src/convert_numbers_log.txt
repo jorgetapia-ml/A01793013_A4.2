@@ -1,6 +1,6 @@
 Testing with file: ../data/P2/TC1.txt
 Filename:  ../data/P2/TC1.txt
-Execute time: 0.006290912628173828 seconds
+Execute time: 0.005826711654663086 seconds
 Results:     Number                Path              binary_array hex_array
 0  6980368  ../data/P2/TC1.txt   11010101000001100010000  006A8310
 1  5517055  ../data/P2/TC1.txt   10101000010111011111111  00542EFF
@@ -15,7 +15,7 @@ Results:     Number                Path              binary_array hex_array
 -----------------------------------
 Testing with file: ../data/P2/TC2.txt
 Filename:  ../data/P2/TC2.txt
-Execute time: 0.0061452388763427734 seconds
+Execute time: 0.005849123001098633 seconds
 Results:     Number                Path              binary_array hex_array
 0  7116776  ../data/P2/TC2.txt   11011001001011111101000  006C97E8
 1  1666340  ../data/P2/TC2.txt     110010110110100100100  00196D24
@@ -30,7 +30,7 @@ Results:     Number                Path              binary_array hex_array
 -----------------------------------
 Testing with file: ../data/P2/TC3.txt
 Filename:  ../data/P2/TC3.txt
-Execute time: 0.006081819534301758 seconds
+Execute time: 0.005563974380493164 seconds
 Results:    Number                Path binary_array hex_array
 0     -39  ../data/P2/TC3.txt     11011001  FFFFFFD9
 1     -36  ../data/P2/TC3.txt     11011100  FFFFFFDC
@@ -48,7 +48,7 @@ Value non numeric found ABC replace by None
 Value non numeric found ERR replace by None
 Value non numeric found VAL replace by None
 Filename:  ../data/P2/TC4.txt
-Execute time: 0.0034530162811279297 seconds
+Execute time: 0.003063678741455078 seconds
 Results:    Number                Path binary_array hex_array
 0   -39.0  ../data/P2/TC4.txt     11011001  FFFFFFD9
 1   -36.0  ../data/P2/TC4.txt     11011100  FFFFFFDC
@@ -61,3 +61,9 @@ Results:    Number                Path binary_array hex_array
 8     0.0  ../data/P2/TC4.txt     00000000  00000000
 9    33.0  ../data/P2/TC4.txt     00100001  00000021
 -----------------------------------
+-----------------------------------
+----------------PyLint-------------------
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+

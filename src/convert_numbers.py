@@ -1,3 +1,4 @@
+"""Module to convert decimal numbers to hex and binary"""
 import argparse
 import time
 try:
@@ -5,7 +6,6 @@ try:
 except ImportError:
     pd = None
     print("Pandas package not found")
-    
 def open_file(file_name):
     """Open file and convert in a array
 
@@ -20,16 +20,13 @@ def open_file(file_name):
         array with values in the file
     """
     try:
-        with open(file_name, "r") as f:
+        with open(file_name, "r", encoding="utf8") as f:
             text = f.read()
     except FileNotFoundError:
         print(f"Error: The file {file_name} was not found.")
         return []
     except PermissionError:
         print(f"Error: Permission denied when trying to read {file_name}.")
-        return []
-    except Exception as e:  
-        print(f"An unexpected error occurred: {e}")
         return []
     array = text.split()
     return array
@@ -78,7 +75,7 @@ def output_file(result):
         dictionary with result values of the file 
     """
 
-    with open("ConvertionResults.txt","w") as f:
+    with open("ConvertionResults.txt","w", encoding="utf8") as f:
         f.write(str(result))
 
 def int_to_bin(num, bits=8):
@@ -94,7 +91,6 @@ def int_to_bin(num, bits=8):
     """
     if num is None:
         return None
-    
     if num >= 0:
         binary = ''
         if num == 0:
@@ -139,7 +135,6 @@ def bin_to_hex(bin_str):
     """
     if bin_str is None:
         return None
-    
     hex_digits = "0123456789ABCDEF"
     hexadecimal = ""
     bin_str = bin_str.zfill(len(bin_str) + (4 - len(bin_str) % 4) % 4)
@@ -151,38 +146,44 @@ def bin_to_hex(bin_str):
 
 def int_to_hex(num, bits=32):
     """
-    Converts an integer to its hexadecimal representation using two's complement for negative numbers.
+    Converts an integer to its hexadecimal representation using two's 
+    complement for negative numbers.
 
     Parameters:
     - num (int): The integer to convert.
     - bits (int): The number of bits for the binary representation before converting to hexadecimal.
 
     Returns:
-    - str: The hexadecimal representation of the integer using two's complement for negative numbers.
+    - str: The hexadecimal representation of the 
+    integer using two's complement for negative numbers.
     """
     if num is None:
         return None
-    
     bin_str = int_to_bin(num, bits)
 
     return bin_to_hex(bin_str)
 
 
 def main():
+    """Run Process to convert an array in hex and binary
+    """
     start_time = time.time()
 
-    parser = argparse.ArgumentParser(description='Compute statistics from a file containing numbers.')
+    parser = argparse.ArgumentParser(
+        description='Compute statistics from a file containing numbers.')
     parser.add_argument('-f', '--file', type=str, required=True, help="File that contains numbers")
     args = parser.parse_args()
 
     file_name = args.file
     array = open_file(file_name)
     array_numeric = validate_type(array)
-    
-    result = {"path": file_name, "n_array": len(array_numeric), "binary_array":[], "hex_array": [] }
-    
-    result["binary_array"] = list(map( int_to_bin, array_numeric,))
-    result["hex_array"] = list(map( int_to_hex, array_numeric))
+    result = {
+        "path": file_name,
+        "n_array": len(array_numeric),
+        "binary_array": [int_to_bin(num) for num in array_numeric],
+        "hex_array": [int_to_hex(num) for num in array_numeric]
+    }
+
     if pd :
         data_result = pd.DataFrame()
         data_result["Number"] = array_numeric
@@ -201,3 +202,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    

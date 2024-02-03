@@ -10,6 +10,9 @@ paths=(
 
 for path in "${paths[@]}"; do
     echo "Testing with file: $path" | tee -a "$log_file"
-    python convertNumbers.py -f "$path" | tee -a "$log_file"
+    python convert_numbers.py -f "$path" | tee -a "$log_file"
     echo "-----------------------------------" | tee -a "$log_file"
 done
+echo "-----------------------------------" | tee -a "$log_file"
+echo "----------------PyLint-------------------" | tee -a "$log_file"
+pylint convert_numbers.py | tee -a "$log_file"
