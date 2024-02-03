@@ -2,6 +2,18 @@ import argparse
 import time
 
 def open_file(file_name):
+    """Open file and convert in a array
+
+    Parameters
+    ----------
+    file_name : str
+        file name to load
+
+    Returns
+    -------
+    list
+        array with values in the file
+    """
     try:
         with open(file_name, "r") as f:
             text = f.read()
