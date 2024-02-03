@@ -2,18 +2,18 @@ import argparse
 import time
 
 def open_file(file_name):
-    """
-    Open a file and return its contents as a list of strings.
-    
-    Parameters:
-        file_name (str): The path to the file to be opened.
-    
-    Returns:
-        list: A list of strings where each string is an item from the file.
-    """
-    with open(file_name, "r") as f:
-        text = f.read()
-    
+    try:
+        with open(file_name, "r") as f:
+            text = f.read()
+    except FileNotFoundError:
+        print(f"Error: The file {file_name} was not found.")
+        return []
+    except PermissionError:
+        print(f"Error: Permission denied when trying to read {file_name}.")
+        return []
+    except Exception as e:  
+        print(f"An unexpected error occurred: {e}")
+        return []
     array = text.split()
     return array
 def is_number(s):
@@ -162,30 +162,31 @@ def mode(array):
         return modes[0]
 
 
-start_time = time.time()
+def main():
+    start_time = time.time()
 
-parser = argparse.ArgumentParser(
-    prog='ComputeStatistics',
-    description='Compute some statistics given a file with a list of numbers',
-    epilog='Text at the bottom of help')
+    parser = argparse.ArgumentParser(description='Compute statistics from a file containing numbers.')
+    parser.add_argument('-f', '--file', type=str, required=True, help="File that contains numbers")
+    args = parser.parse_args()
 
-parser.add_argument('-f', '--file', type=str, required=True, help="file that contains numbers")
+    file_name = args.file
+    array = open_file(file_name)
+    array_numeric = validate_type(array)
 
-args = parser.parse_args()
-file_name = args.file
+    if not array_numeric:
+        print("No valid numeric data found.")
+        return
 
-array = open_file(file_name)
-array = validate_type(array)
+    statistics = {"path": file_name, "mean": 0, "median": 0, "mode": 0, "std": 0, "var": 0}
+    if array_numeric:
+        for func in [mean, median, mode, std, var]:
+            statistics[func.__name__] = func(array_numeric)
 
-statistics = {"path": file_name,"len": 0, "mean": 0, "median": 0, "mode": 0, "std": 0, "var": 0}
+    end_time = time.time()
+    execute_time = end_time - start_time
 
-if len(array) != 0:
-    for f in [len,mean, median, mode, std, var]:
-        statistics[f.__name__] = f(array)
+    print(f"Execute time: {execute_time} seconds")
+    print("Results:", statistics)
 
-end_time = time.time()
-
-execute_time = end_time - start_time
-
-print(f"Execute time: {execute_time} seg")
-print("Results", statistics)
+if __name__ == "__main__":
+    main()
