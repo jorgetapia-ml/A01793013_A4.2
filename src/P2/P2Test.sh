@@ -1,9 +1,9 @@
 log_file="convert_numbers_log.txt"
 paths=(
-    "../data/P2/TC1.txt"
-    "../data/P2/TC2.txt"
-    "../data/P2/TC3.txt"
-    "../data/P2/TC4.txt"
+    "../../data/P2/TC1.txt"
+    "../../data/P2/TC2.txt"
+    "../../data/P2/TC3.txt"
+    "../../data/P2/TC4.txt"
 
 )
 > "$log_file"
