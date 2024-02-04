@@ -186,7 +186,7 @@ def main():
 
     if pd :
         data_result = pd.DataFrame()
-        data_result["Number"] = array_numeric
+        data_result["Number"] = array
         data_result["Path"] = file_name
         data_result["binary_array"] = result["binary_array"]
         data_result["hex_array"] = result["hex_array"]
